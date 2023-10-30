@@ -1,0 +1,23 @@
+#+title: wgsl-ts-mode
+#+options: toc:nil
+
+#+begin_export markdown
+<!-- This file is generated from README.org -->
+#+end_export
+Emacs [[https://tree-sitter.github.io/tree-sitter/][tree-sitter]] support for the [[https://gpuweb.github.io/gpuweb/wgsl.html][WebGPU Shading Language (WGSL)]] providing syntax highlighting and navigation.
+* Installation
+In order to use this mode, you must arrange that the [[https://github.com/szebniok/tree-sitter-wgsl/tree/master][tree-sitter-wgsl grammar]] is available.
+** General
+Tree-sitter grammars are unfortunately a separate concern from the emacs support. There is a [[https://www.masteringemacs.org/article/how-to-get-started-tree-sitter#installing-the-language-grammars][section]] on installing grammars as part of a helpful article on getting started with tree-sitter in emacs that will likely be of use.
+** Nix
+If you use the [[https://nixos.org][nix]] package manager, it is available as part of the ~treesit-grammars~ package that you can include among your other emacs packages with,
+
+#+begin_src nix
+treesit-grammars.with-all-grammars
+#+end_src
+
+or you can specify which grammars to include,
+
+#+begin_src nix
+(treesit-grammars.with-grammars (p: [ p.tree-sitter-wgsl ]))
+#+end_src
